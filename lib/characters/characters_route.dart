@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../services.dart';
 import 'character_model.dart';
+import 'each_character_route.dart';
 
 class CharactersRoute extends StatelessWidget {
   @override
@@ -32,7 +33,7 @@ class CharactersRoute extends StatelessWidget {
                                 fontWeight: FontWeight.bold,
                             ),
                           ),
-                          Text(
+                          if (snapshot.data[position].role != null) Text(
                             '${snapshot.data[position].role}',
                             style: TextStyle(
                                 fontSize: 18.0,
@@ -50,9 +51,12 @@ class CharactersRoute extends StatelessWidget {
                       ),
                     ),
                   ),
-                  // onTap: () {
-                  //   // Todo: goto each character when clicked
-                  // },
+                  onTap: () {
+                    Navigator.push (
+                      context,
+                      MaterialPageRoute(builder: (context) => EachCharacterRoute(characterName: snapshot.data[position].name)),
+                    );
+                  },
                 ),
               );
             },

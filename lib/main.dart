@@ -3,7 +3,7 @@ import 'package:flutter/services.dart';
 import 'hat/hat_route.dart';
 import 'characters/characters_route.dart';
 //import 'houses/houses_route.dart';
-//import 'spells/spells_route.dart';
+import 'spells/spells_route.dart';
 
 void main() {
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]).then((_) {
@@ -149,11 +149,10 @@ class HomeScreen extends StatelessWidget {
                         ),
                       ),
                       onPressed: () {
-                        // Navigator.push (
-                        //   context,
-                        //   //MaterialPageRoute(builder: (context) => SpellsRoute()),
-                        // );
-                        // Todo: new Screen with all the spells
+                        Navigator.push (
+                          context,
+                          MaterialPageRoute(builder: (context) => SpellsRoute()),
+                        );
                       },
                     ),
                   ),

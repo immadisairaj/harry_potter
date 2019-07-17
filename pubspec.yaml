@@ -42,6 +42,11 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
+  - assets/images/hogwarts.jpg
+  - assets/images/gryffindor.png
+  - assets/images/hufflepuff.png
+  - assets/images/ravenclaw.png
+  - assets/images/slytherin.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

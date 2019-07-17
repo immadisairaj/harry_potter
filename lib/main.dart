@@ -70,7 +70,10 @@ class HomeScreen extends StatelessWidget {
                         ),
                       ),
                       onPressed: () {
-                        // Todo: add hat
+                        Navigator.push (
+                          context,
+                          MaterialPageRoute(builder: (context) => HatRoute()),
+                        );
                       },
                     ),
                   ),
@@ -93,7 +96,11 @@ class HomeScreen extends StatelessWidget {
                         ),
                       ),
                       onPressed: () {
-                        // Todo: add characters
+                        // Navigator.push (
+                        //   context,
+                        //   MaterialPageRoute(builder: (context) => CharactersRoute()),
+                        // );
+                        // Todo: Add screen for characters list
                       },
                     ),
                   ),
@@ -116,7 +123,11 @@ class HomeScreen extends StatelessWidget {
                         ),
                       ),
                       onPressed: () {
-                        // Todo: add houses
+                        // Navigator.push (
+                        //   context,
+                        //   //MaterialPageRoute(builder: (context) => HousesRoute()),
+                        // );
+                        // Todo: new Screen with 4 houses and when pressed one of them goes to the house details
                       },
                     ),
                   ),
@@ -139,7 +150,11 @@ class HomeScreen extends StatelessWidget {
                         ),
                       ),
                       onPressed: () {
-                        // Todo: add spells
+                        // Navigator.push (
+                        //   context,
+                        //   //MaterialPageRoute(builder: (context) => SpellsRoute()),
+                        // );
+                        // Todo: new Screen with all the spells
                       },
                     ),
                   ),

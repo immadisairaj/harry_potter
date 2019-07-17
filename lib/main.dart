@@ -96,11 +96,10 @@ class HomeScreen extends StatelessWidget {
                         ),
                       ),
                       onPressed: () {
-                        // Navigator.push (
-                        //   context,
-                        //   MaterialPageRoute(builder: (context) => CharactersRoute()),
-                        // );
-                        // Todo: Add screen for characters list
+                        Navigator.push (
+                          context,
+                          MaterialPageRoute(builder: (context) => CharactersRoute()),
+                        );
                       },
                     ),
                   ),

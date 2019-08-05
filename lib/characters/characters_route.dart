@@ -28,6 +28,7 @@ class CharactersRoute extends StatelessWidget {
                         children: <Widget>[
                           Text(
                             '${snapshot.data[position].name}',
+                            textAlign: TextAlign.center,
                             style: TextStyle(
                                 fontSize: 20.0,
                                 fontWeight: FontWeight.bold,
@@ -35,6 +36,7 @@ class CharactersRoute extends StatelessWidget {
                           ),
                           if (snapshot.data[position].role != null) Text(
                             '${snapshot.data[position].role}',
+                            textAlign: TextAlign.center,
                             style: TextStyle(
                                 fontSize: 18.0,
                                 fontStyle: FontStyle.italic,
@@ -42,6 +44,7 @@ class CharactersRoute extends StatelessWidget {
                           ),
                           Text(
                             'Blood Status: ${snapshot.data[position].bloodStatus}',
+                            textAlign: TextAlign.center,
                             style: TextStyle(
                                 fontSize: 18.0,
                                 fontStyle: FontStyle.italic,

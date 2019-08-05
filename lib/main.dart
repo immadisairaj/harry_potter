@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'hat/hat_route.dart';
 import 'characters/characters_route.dart';
-//import 'houses/houses_route.dart';
+import 'houses/houses_route.dart';
 import 'spells/spells_route.dart';
 
 void main() {
@@ -27,7 +27,6 @@ class HomeScreen extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
         brightness: Brightness.dark,
-        // primaryColor: Color(0x0b0630),
         accentColor: Colors.amber,
         fontFamily: 'Montserrat',
       ),
@@ -122,11 +121,10 @@ class HomeScreen extends StatelessWidget {
                         ),
                       ),
                       onPressed: () {
-                        // Navigator.push (
-                        //   context,
-                        //   //MaterialPageRoute(builder: (context) => HousesRoute()),
-                        // );
-                        // Todo: new Screen with 4 houses and when pressed one of them goes to the house details
+                        Navigator.push (
+                          context,
+                          MaterialPageRoute(builder: (context) => HousesRoute()),
+                        );
                       },
                     ),
                   ),

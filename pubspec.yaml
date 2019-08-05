@@ -48,6 +48,7 @@ flutter:
   - assets/images/hufflepuff.png
   - assets/images/ravenclaw.png
   - assets/images/slytherin.png
+  - assets/images/houses.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

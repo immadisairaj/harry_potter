@@ -14,6 +14,20 @@ class SpellsRoute extends StatelessWidget {
             return Center (
               child: CircularProgressIndicator()
             );
+          } else if (snapshot.hasError) {
+            return Center (
+              child: Padding (
+                padding: EdgeInsets.all(20.0),
+                child: Text(
+                  "Please Check Your Internet Connectivity and Try again",
+                  textAlign: TextAlign.center,
+                  style: TextStyle (
+                    fontSize: 45.0,
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+            );
           }
           return ListView.builder (
             itemBuilder: (context, position) {
@@ -26,6 +40,7 @@ class SpellsRoute extends StatelessWidget {
                       children: <Widget>[
                         Text(
                           '${snapshot.data[position].spell}',
+                          textAlign: TextAlign.center,
                           style: TextStyle(
                               fontSize: 20.0,
                               fontWeight: FontWeight.bold,
@@ -33,6 +48,7 @@ class SpellsRoute extends StatelessWidget {
                         ),
                         Text(
                           'Type: ${snapshot.data[position].type}',
+                          textAlign: TextAlign.center,
                           style: TextStyle(
                               fontSize: 18.0,
                               fontStyle: FontStyle.italic,
@@ -40,6 +56,7 @@ class SpellsRoute extends StatelessWidget {
                         ),
                         Text(
                           'Effect: ${snapshot.data[position].effect}',
+                          textAlign: TextAlign.center,
                           style: TextStyle(
                               fontSize: 18.0,
                               fontStyle: FontStyle.italic,

@@ -21,6 +21,20 @@ class EachHouseRoute extends StatelessWidget {
             return Center (
               child: CircularProgressIndicator()
             );
+          } else if (snapshot.hasError) {
+            return Center (
+              child: Padding (
+                padding: EdgeInsets.all(20.0),
+                child: Text(
+                  "Please Check Your Internet Connectivity and Try again",
+                  textAlign: TextAlign.center,
+                  style: TextStyle (
+                    fontSize: 45.0,
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+            );
           }
           return Padding (
             padding: EdgeInsets.all(10.0),

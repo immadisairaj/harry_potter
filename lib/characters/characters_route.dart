@@ -3,6 +3,8 @@ import '../services.dart';
 import 'character_model.dart';
 import 'each_character_route.dart';
 
+List<Character> characters;
+
 class CharactersRoute extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -30,10 +32,65 @@ class CharactersRoute extends StatelessWidget {
               ),
             );
           }
-          return ListView.builder (
+          characters = snapshot.data;
+          return Padding (
+            padding: EdgeInsets.all(10.0),
+            child: AllCharacters(),
+          );
+        },
+      ),
+    );
+  }
+}
+
+class AllCharacters extends StatefulWidget {
+  _AllCharacters createState() => _AllCharacters();
+}
+
+class _AllCharacters extends State<AllCharacters> {
+  
+  TextEditingController editingController = TextEditingController();
+  var items = List<Character>();
+
+  @override
+  void initState() {
+    items.addAll(characters);
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Column (
+      children: <Widget>[
+        Flexible (
+          flex: 0,
+          child: Padding (
+            padding: EdgeInsets.only(top: 15.0, bottom: 10.0),
+            child: TextField(
+              onChanged: (value) {
+                filterSearchResults(value);
+              },
+              controller: editingController,
+              decoration: InputDecoration(
+                  labelText: "Search",
+                  fillColor: Colors.white,
+                  filled: true,
+                  prefixIcon: Icon(
+                    Icons.search
+                  ),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(25.0)),
+                  ),
+                ),
+            ),
+          ),
+        ),
+        Flexible (
+          flex: 1,
+          child: ListView.builder (
             itemBuilder: (context, position) {
               return Padding (
-                padding: EdgeInsets.only(left: 10.0, right: 10.0, top: 1.0, bottom: 1.0),
+                padding: EdgeInsets.only(left: 2.0, right: 2.0, top: 1.0, bottom: 1.0),
                 child: GestureDetector (
                   child: Card (
                     child: Padding (
@@ -41,15 +98,15 @@ class CharactersRoute extends StatelessWidget {
                       child: Column (
                         children: <Widget>[
                           Text(
-                            '${snapshot.data[position].name}',
+                            '${characters[position].name}',
                             textAlign: TextAlign.center,
                             style: TextStyle(
                                 fontSize: 20.0,
                                 fontWeight: FontWeight.bold,
                             ),
                           ),
-                          if (snapshot.data[position].role != null) Text(
-                            '${snapshot.data[position].role}',
+                          if (characters[position].role != null) Text(
+                            '${characters[position].role}',
                             textAlign: TextAlign.center,
                             style: TextStyle(
                                 fontSize: 18.0,
@@ -57,7 +114,7 @@ class CharactersRoute extends StatelessWidget {
                             ),
                           ),
                           Text(
-                            'Blood Status: ${snapshot.data[position].bloodStatus}',
+                            'Blood Status: ${characters[position].bloodStatus}',
                             textAlign: TextAlign.center,
                             style: TextStyle(
                                 fontSize: 18.0,
@@ -71,16 +128,40 @@ class CharactersRoute extends StatelessWidget {
                   onTap: () {
                     Navigator.push (
                       context,
-                      MaterialPageRoute(builder: (context) => EachCharacterRoute(characterName: snapshot.data[position].name)),
+                      MaterialPageRoute(builder: (context) => EachCharacterRoute(characterName: characters[position].name)),
                     );
                   },
                 ),
               );
             },
-            itemCount: snapshot.data.length,
-          );
-        },
-      ),
+            itemCount: characters.length,
+          ),
+        ),
+      ],
     );
   }
+
+  void filterSearchResults(String query) {
+    List<Character> dummySearchList = List<Character>();
+    dummySearchList.addAll(characters);
+    if(query.isNotEmpty) {
+      List<Character> dummyListData = List<Character>();
+      dummySearchList.forEach((item) {
+        if(item.name.contains(query)) {
+          dummyListData.add(item);
+        }
+      });
+      setState(() {
+        items.clear();
+        items.addAll(dummyListData);
+      });
+      return;
+    } else {
+      setState(() {
+        items.clear();
+        items.addAll(characters);
+      });
+    }
+  }
+
 }

@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'dart:math';
 
 class RandomHouse {
-  Color color;
-  String assetImage;
-  String house;
+  Color? color;
+  String? assetImage;
+  String? house;
 
   RandomHouse({this.house = null, this.assetImage = null, this.color = null});
 }

@@ -4,9 +4,9 @@ import 'character_model.dart';
 
 class EachCharacterRoute extends StatelessWidget {
 
-  final String characterName;
+  final String? characterName;
 
-  EachCharacterRoute({Key key, @required this.characterName}) : super(key: key);
+  EachCharacterRoute({Key? key, required this.characterName}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -44,31 +44,31 @@ class EachCharacterRoute extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: <Widget>[
                       Text(
-                        '${snapshot.data[0].name}',
+                        '${snapshot.data![0].name}',
                         style: TextStyle(
                             fontSize: 50.0,
                             fontWeight: FontWeight.bold,
                         ),
                       ),
-                      if (snapshot.data[0].alias != null) Text(
-                        'alias ${snapshot.data[0].alias}',
+                      if (snapshot.data![0].alias != null) Text(
+                        'alias ${snapshot.data![0].alias}',
                         style: TextStyle(
                             fontSize: 25.0,
                             fontStyle: FontStyle.italic,
                         ),
                       ),
-                      if (snapshot.data[0].role != null) Text(
-                        '${snapshot.data[0].role}',
+                      if (snapshot.data![0].role != null) Text(
+                        '${snapshot.data![0].role}',
                         style: TextStyle(
                             fontSize: 25.0,
                             fontStyle: FontStyle.italic,
                         ),
                       ),
-                      if (snapshot.data[0].house != null) RichText(
+                      if (snapshot.data![0].house != null) RichText(
                         text: new TextSpan (
                           children: <TextSpan>[
                             TextSpan (text: 'House: ', style: TextStyle(fontWeight: FontWeight.bold)),
-                            TextSpan (text: '${snapshot.data[0].house}'),
+                            TextSpan (text: '${snapshot.data![0].house}'),
                           ],
                           style: TextStyle(
                               fontSize: 25.0,
@@ -77,11 +77,11 @@ class EachCharacterRoute extends StatelessWidget {
                           ),
                         ),
                       ),
-                      if (snapshot.data[0].school != null) RichText(
+                      if (snapshot.data![0].school != null) RichText(
                         text: new TextSpan (
                           children: <TextSpan>[
                             TextSpan (text: 'School: ', style: TextStyle(fontWeight: FontWeight.bold)),
-                            TextSpan (text: '${snapshot.data[0].school}'),
+                            TextSpan (text: '${snapshot.data![0].school}'),
                           ],
                           style: TextStyle(
                               fontSize: 25.0,
@@ -90,11 +90,11 @@ class EachCharacterRoute extends StatelessWidget {
                           ),
                         ),
                       ),
-                      if (snapshot.data[0].wand != null) RichText(
+                      if (snapshot.data![0].wand != null) RichText(
                         text: new TextSpan (
                           children: <TextSpan>[
                             TextSpan (text: 'Wand: ', style: TextStyle(fontWeight: FontWeight.bold)),
-                            TextSpan (text: '${snapshot.data[0].wand}'),
+                            TextSpan (text: '${snapshot.data![0].wand}'),
                           ],
                           style: TextStyle(
                               fontSize: 25.0,
@@ -103,11 +103,11 @@ class EachCharacterRoute extends StatelessWidget {
                           ),
                         ),
                       ),
-                      if (snapshot.data[0].patronus != null) RichText(
+                      if (snapshot.data![0].patronus != null) RichText(
                         text: new TextSpan (
                           children: <TextSpan>[
                             TextSpan (text: 'Patronus: ', style: TextStyle(fontWeight: FontWeight.bold)),
-                            TextSpan (text: '${snapshot.data[0].patronus}'),
+                            TextSpan (text: '${snapshot.data![0].patronus}'),
                           ],
                           style: TextStyle(
                               fontSize: 25.0,
@@ -116,11 +116,11 @@ class EachCharacterRoute extends StatelessWidget {
                           ),
                         ),
                       ),
-                      if (snapshot.data[0].boggart != null) RichText(
+                      if (snapshot.data![0].boggart != null) RichText(
                         text: new TextSpan (
                           children: <TextSpan>[
                             TextSpan (text: 'Boggart: ', style: TextStyle(fontWeight: FontWeight.bold)),
-                            TextSpan (text: '${snapshot.data[0].boggart}'),
+                            TextSpan (text: '${snapshot.data![0].boggart}'),
                           ],
                           style: TextStyle(
                               fontSize: 25.0,
@@ -129,28 +129,28 @@ class EachCharacterRoute extends StatelessWidget {
                           ),
                         ),
                       ),
-                      if (snapshot.data[0].ministryOfMagic) Text(
+                      if (snapshot.data![0].ministryOfMagic!) Text(
                         'Part of Ministry of Magic',
                         style: TextStyle(
                             fontSize: 25.0,
                             fontStyle: FontStyle.italic,
                         ),
                       ),
-                      if (snapshot.data[0].orderOfThePhoenix) Text(
+                      if (snapshot.data![0].orderOfThePhoenix!) Text(
                         'Part of Order of The Phoenix',
                         style: TextStyle(
                             fontSize: 25.0,
                             fontStyle: FontStyle.italic,
                         ),
                       ),
-                      if (snapshot.data[0].dumbledoresArmy) Text(
+                      if (snapshot.data![0].dumbledoresArmy!) Text(
                         'Part of Dumbledores Army',
                         style: TextStyle(
                             fontSize: 25.0,
                             fontStyle: FontStyle.italic,
                         ),
                       ),
-                      if (snapshot.data[0].deathEater) Text(
+                      if (snapshot.data![0].deathEater!) Text(
                         'Part of Death Eater',
                         style: TextStyle(
                             fontSize: 25.0,
@@ -161,7 +161,7 @@ class EachCharacterRoute extends StatelessWidget {
                         text: new TextSpan (
                           children: <TextSpan>[
                             TextSpan (text: 'Blood Status: ', style: TextStyle(fontWeight: FontWeight.bold)),
-                            TextSpan (text: '${snapshot.data[0].bloodStatus}'),
+                            TextSpan (text: '${snapshot.data![0].bloodStatus}'),
                           ],
                           style: TextStyle(
                               fontSize: 25.0,
@@ -174,7 +174,7 @@ class EachCharacterRoute extends StatelessWidget {
                         text: new TextSpan (
                           children: <TextSpan>[
                             TextSpan (text: 'Species: ', style: TextStyle(fontWeight: FontWeight.bold)),
-                            TextSpan (text: '${snapshot.data[0].species}'),
+                            TextSpan (text: '${snapshot.data![0].species}'),
                           ],
                           style: TextStyle(
                               fontSize: 25.0,

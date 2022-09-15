@@ -14,11 +14,11 @@ class HatRoute extends StatelessWidget {
             width: 500.0,
             height: 400.0,
             child: Image.asset (
-              rand.assetImage,
+              rand.assetImage!,
             ),
           ),
           Text (
-            rand.house,
+            rand.house!,
             style: TextStyle(
               color: Colors.white,
               fontSize: 30.0,

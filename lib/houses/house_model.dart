@@ -9,17 +9,17 @@ List<House> houseFromJson(String str) => new List<House>.from(json.decode(str).m
 String houseToJson(List<House> data) => json.encode(new List<dynamic>.from(data.map((x) => x.toJson())));
 
 class House {
-    String id;
-    String name;
-    String mascot;
-    String headOfHouse;
-    String houseGhost;
-    String founder;
-    int v;
-    String school;
-    List<Member> members;
-    List<String> values;
-    List<String> colors;
+    String? id;
+    String? name;
+    String? mascot;
+    String? headOfHouse;
+    String? houseGhost;
+    String? founder;
+    int? v;
+    String? school;
+    List<Member>? members;
+    List<String>? values;
+    List<String>? colors;
 
     House({
         this.id,
@@ -58,15 +58,15 @@ class House {
         "founder": founder,
         "__v": v,
         "school": school,
-        "members": new List<dynamic>.from(members.map((x) => x.toJson())),
-        "values": new List<dynamic>.from(values.map((x) => x)),
-        "colors": new List<dynamic>.from(colors.map((x) => x)),
+        "members": new List<dynamic>.from(members!.map((x) => x.toJson())),
+        "values": new List<dynamic>.from(values!.map((x) => x)),
+        "colors": new List<dynamic>.from(colors!.map((x) => x)),
     };
 }
 
 class Member {
-    String id;
-    String name;
+    String? id;
+    String? name;
 
     Member({
         this.id,

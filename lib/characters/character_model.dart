@@ -4,48 +4,50 @@
 
 import 'dart:convert';
 
-List<Character> characterFromJson(String str) => new List<Character>.from(json.decode(str).map((x) => Character.fromJson(x)));
+List<Character> characterFromJson(String str) => new List<Character>.from(
+    json.decode(str).map((x) => Character.fromJson(x)));
 
-String characterToJson(List<Character> data) => json.encode(new List<dynamic>.from(data.map((x) => x.toJson())));
+String characterToJson(List<Character> data) =>
+    json.encode(new List<dynamic>.from(data.map((x) => x.toJson())));
 
 class Character {
-    String id;
-    String name;
-    String role;
-    String house;
-    String school;
-    String alias;
-    String wand;
-    String boggart;
-    String patronus;
-    int v;
-    bool ministryOfMagic;
-    bool orderOfThePhoenix;
-    bool dumbledoresArmy;
-    bool deathEater;
-    String bloodStatus;
-    String species;
+  String? id;
+  String? name;
+  String? role;
+  String? house;
+  String? school;
+  String? alias;
+  String? wand;
+  String? boggart;
+  String? patronus;
+  int? v;
+  bool? ministryOfMagic;
+  bool? orderOfThePhoenix;
+  bool? dumbledoresArmy;
+  bool? deathEater;
+  String? bloodStatus;
+  String? species;
 
-    Character({
-        this.id,
-        this.name,
-        this.role,
-        this.house,
-        this.school,
-        this.alias,
-        this.wand,
-        this.boggart,
-        this.patronus,
-        this.v,
-        this.ministryOfMagic,
-        this.orderOfThePhoenix,
-        this.dumbledoresArmy,
-        this.deathEater,
-        this.bloodStatus,
-        this.species,
-    });
+  Character({
+    this.id,
+    this.name,
+    this.role,
+    this.house,
+    this.school,
+    this.alias,
+    this.wand,
+    this.boggart,
+    this.patronus,
+    this.v,
+    this.ministryOfMagic,
+    this.orderOfThePhoenix,
+    this.dumbledoresArmy,
+    this.deathEater,
+    this.bloodStatus,
+    this.species,
+  });
 
-    factory Character.fromJson(Map<String, dynamic> json) => new Character(
+  factory Character.fromJson(Map<String, dynamic> json) => new Character(
         id: json["_id"],
         name: json["name"],
         role: json["role"],
@@ -62,9 +64,9 @@ class Character {
         deathEater: json["deathEater"],
         bloodStatus: json["bloodStatus"],
         species: json["species"],
-    );
+      );
 
-    Map<String, dynamic> toJson() => {
+  Map<String, dynamic> toJson() => {
         "_id": id,
         "name": name,
         "role": role,
@@ -81,5 +83,5 @@ class Character {
         "deathEater": deathEater,
         "bloodStatus": bloodStatus,
         "species": species,
-    };
+      };
 }

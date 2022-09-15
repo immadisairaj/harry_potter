@@ -2,6 +2,10 @@
 
 Uses Potter Api
 
+Currently as of 15th Sept, the Potter API is not working.
+
+Updated and migrated the project. The project works just fine only if the potter api works good.
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.

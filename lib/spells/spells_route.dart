@@ -39,7 +39,7 @@ class SpellsRoute extends StatelessWidget {
                     child: Column (
                       children: <Widget>[
                         Text(
-                          '${snapshot.data[position].spell}',
+                          '${snapshot.data![position].spell}',
                           textAlign: TextAlign.center,
                           style: TextStyle(
                               fontSize: 20.0,
@@ -47,7 +47,7 @@ class SpellsRoute extends StatelessWidget {
                           ),
                         ),
                         Text(
-                          'Type: ${snapshot.data[position].type}',
+                          'Type: ${snapshot.data![position].type}',
                           textAlign: TextAlign.center,
                           style: TextStyle(
                               fontSize: 18.0,
@@ -55,7 +55,7 @@ class SpellsRoute extends StatelessWidget {
                           ),
                         ),
                         Text(
-                          'Effect: ${snapshot.data[position].effect}',
+                          'Effect: ${snapshot.data![position].effect}',
                           textAlign: TextAlign.center,
                           style: TextStyle(
                               fontSize: 18.0,
@@ -68,7 +68,7 @@ class SpellsRoute extends StatelessWidget {
                 ),
               );
             },
-            itemCount: snapshot.data.length,
+            itemCount: snapshot.data!.length,
           );
         },
       ),

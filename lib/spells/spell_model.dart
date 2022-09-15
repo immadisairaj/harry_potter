@@ -9,10 +9,10 @@ List<Spell> spellFromJson(String str) => new List<Spell>.from(json.decode(str).m
 String spellToJson(List<Spell> data) => json.encode(new List<dynamic>.from(data.map((x) => x.toJson())));
 
 class Spell {
-    String id;
-    String spell;
-    String type;
-    String effect;
+    String? id;
+    String? spell;
+    String? type;
+    String? effect;
 
     Spell({
         this.id,
